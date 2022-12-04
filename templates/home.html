@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Xabar jo'natish </h1>
+    <form method="post" >{% csrf_token %}
+        {{ form|crispy}}
+        <input class="btn btn-success ml-2" type="submit" value="Jo'natish" >
+    </form>
+{% endblock content %}

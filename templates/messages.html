@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Postlar{% endblock title %}
+
+{% block content %}
+    <a class="btn btn-info" href="{% url 'home' %}"> Yana xabar junatish</a>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First_name</th>
+              <th scope="col">Last_name</th>
+              <th scope="col">Telifon</th>
+              <th scope="col">Email</th>
+              <th scope="col">Xabar</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for contact in object_list %}
+                <tr>
+                  <th scope="row">{{ contact.id }}</th>
+                  <td>{{ contact.first_name }}</td>
+                  <td>{{ contact.last_name }}</td>
+                  <td>{{ contact.phone_num }}</td>
+                  <td>{{ contact.email }}</td>
+                  <td>{{ contact.message }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+{% endblock content %}
